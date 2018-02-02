@@ -11,6 +11,9 @@
 |
 */
 
+header('Access-Control-Allow-Methods: DELETE');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Content-Type, x-xsrf-token, x_csrftoken');
 Route::get('/', function () {
     return view('welcome');
 });

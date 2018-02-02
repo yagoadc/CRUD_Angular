@@ -39,9 +39,9 @@ class AlunoController extends Controller
     //cria um novo aluno
     public function store(Request $request)
     {
-        Aluno::create($request->all());
+        $aluno = Aluno::create($request->all());
 
-        return response()->json(['res' => 'Aluno criado com sucesso!']);
+        return response()->json(['res' => 'Aluno criado com sucesso!', 'aluno' => $aluno]);
     }
 
     /**

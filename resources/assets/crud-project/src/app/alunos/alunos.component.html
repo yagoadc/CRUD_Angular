@@ -1,0 +1,11 @@
+<app-aluno-detail [aluno]="selectedAluno"></app-aluno-detail>
+
+<h2>Meus alunos</h2>
+Adicionar novo aluno: <input #novoAluno (keyup)="0"> <button (click)="addAluno(novoAluno.value)">add</button>
+
+<ul class="alunos">
+<li *ngFor="let aluno of alunos" (click)="onSelect(aluno)" [class.selected]=" aluno === selectedAluno">
+	<span class="badge">{{ aluno.id }}</span> {{ aluno.name }}
+	<span class="remove-button" (click)="deleteAluno(aluno)">X</span>
+</li>
+</ul>
